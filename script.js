@@ -442,9 +442,9 @@ function renderReviews() {
   // Pinned review always at top, user reviews below
   const allReviews = [pinnedReview, ...userReviews];
 
-  const fragment = document.createDocumentFragment();
+   const fragment = document.createDocumentFragment();
 
-allReviews.forEach((r) => {
+  allReviews.forEach((r) => {
   const card = document.createElement("div");
   card.className = "review-card";
 
@@ -488,8 +488,7 @@ allReviews.forEach((r) => {
 });
 
 grid.replaceChildren(fragment);
-  
-
+}
 // Star rating widget
 let selectedRating = 0;
 const starBtns = document.querySelectorAll("#star-input .star-btn");
