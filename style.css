@@ -1016,7 +1016,7 @@ body.light-theme .nav-cta:hover {
 }
 
 .review-name {
-  display: block;
+  display: inline-block;
   font-size: 0.9rem;
   margin-right: 8px;
   color: var(--color-text);
