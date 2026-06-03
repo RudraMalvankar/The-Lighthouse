@@ -442,7 +442,7 @@ function renderReviews() {
   // Pinned review always at top, user reviews below
   const allReviews = [pinnedReview, ...userReviews];
 
-  grid.appendChild(fragment);
+  
 
     const fragment = document.createDocumentFragment();
 
@@ -476,8 +476,7 @@ function renderReviews() {
     date.className = "review-date";
     date.textContent = r.date;
 
-   name.style.marginRight = "8px";
-
+   
     info.appendChild(name);
     info.appendChild(date);
 
