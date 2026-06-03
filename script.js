@@ -442,11 +442,11 @@ function renderReviews() {
   // Pinned review always at top, user reviews below
   const allReviews = [pinnedReview, ...userReviews];
 
-  grid.innerHTML = "";
+  grid.appendChild(fragment);
 
-const fragment = document.createDocumentFragment();
+    const fragment = document.createDocumentFragment();
 
-allReviews.forEach((r) => {
+    allReviews.forEach((r) => {
     const card = document.createElement("div");
     card.className = "review-card";
 
@@ -476,9 +476,10 @@ allReviews.forEach((r) => {
     date.className = "review-date";
     date.textContent = r.date;
 
-   info.appendChild(name);
-info.appendChild(document.createTextNode(" "));
-info.appendChild(date);
+   name.style.marginRight = "8px";
+
+    info.appendChild(name);
+    info.appendChild(date);
 
     author.appendChild(avatar);
     author.appendChild(info);
@@ -490,7 +491,7 @@ info.appendChild(date);
     fragment.appendChild(card);
     
   });
-  grid.appendChild(fragment);
+  grid.replaceChildren(fragment);
 }
 
 // Star rating widget
