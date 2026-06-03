@@ -444,7 +444,9 @@ function renderReviews() {
 
   grid.innerHTML = "";
 
-  allReviews.forEach((r) => {
+const fragment = document.createDocumentFragment();
+
+allReviews.forEach((r) => {
     const card = document.createElement("div");
     card.className = "review-card";
 
@@ -474,8 +476,9 @@ function renderReviews() {
     date.className = "review-date";
     date.textContent = r.date;
 
-    info.appendChild(name);
-    info.appendChild(date);
+   info.appendChild(name);
+info.appendChild(document.createTextNode(" "));
+info.appendChild(date);
 
     author.appendChild(avatar);
     author.appendChild(info);
@@ -484,8 +487,10 @@ function renderReviews() {
     card.appendChild(text);
     card.appendChild(author);
 
-    grid.appendChild(card);
+    fragment.appendChild(card);
+    
   });
+  grid.appendChild(fragment);
 }
 
 // Star rating widget
