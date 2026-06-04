@@ -636,3 +636,15 @@ backToTopBtn.addEventListener("click", () => {
     behavior: "smooth",
   });
 });
+
+
+//Mini Date Logic 
+const reservationDateInput = document.getElementById("reservation-date");
+
+if (reservationDateInput) {
+  const tomorrow = new Date();
+  tomorrow.setDate(tomorrow.getDate() + 1);
+
+  const formattedDate = tomorrow.toISOString().split("T")[0];
+  reservationDateInput.min = formattedDate;
+}
